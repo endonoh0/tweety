@@ -1,14 +1,22 @@
 <div class="flex p-4 border-b border-b-gray-400">
-    <div class="mr-2 flex-shrink-0">
-        <img
-            src="images/image-1.png"
-            alt="Avatar of a women"
-            class="rounded-full mr-2"
-        >
-    </div>
+    <a href="{{ route('profile', $tweet->user) }}">
+        <div class="mr-2 flex-shrink-0">
+            <img
+                src="/images/image-1.png"
+                alt="Avatar of a women"
+                class="rounded-full mr-2"
+                width="50"
+                height="50"
+            >
+        </div>
+    </a>
 
     <div>
-        <h5 class="font-bold mb-4">{{ $tweet->user->name }}</h5>
+        <h5 class="font-bold mb-4">
+            <a href="{{ route('profile', $tweet->user) }}">
+                {{ $tweet->user->name }}
+            </a>
+        </h5>
 
         <p class="text-sm">
             {{ $tweet->body }}
