@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'name', 'email', 'password', 'avatar'
     ];
 
     /**
@@ -36,6 +36,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getAvatarAttribute($value)
+    {
+        return asset($value);
+    }
+
     public function timeline()
     {
         $friends = $this->follows()->pluck('id');
@@ -50,14 +55,9 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class)->latest();
     }
 
-    public function getRouteKeyName()
-    {
-        return 'name';
-    }
-
     public function profilePath($append = '')
     {
-        $path = route('profile', $this);
+        $path = route('profile', $this->username);
 
         return $append ? "{$path}/{$append}" : $path;
     }

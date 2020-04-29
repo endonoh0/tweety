@@ -8,8 +8,8 @@
             >
 
             <img
-                src="/images/image-1.png"
-                alt="Avatar of a women"
+                src="{{ $user->avatar }}"
+                alt="your avatar"
                 class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
                 style="left: 50%"
                 width="150px"
