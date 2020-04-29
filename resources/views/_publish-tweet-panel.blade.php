@@ -15,6 +15,8 @@
                 src="images/image-1.png"
                 alt="your avatar"
                 class="rounded-full mr-2"
+                width="50"
+                height="50"
             >
             <button
                 type="submit"
