@@ -55,6 +55,7 @@
                     type="file"
                     name="avatar"
                     id="avatar"
+                    accept="image/*"
                 >
 
                 <img src="{{ $user->avatar }}"
@@ -132,6 +133,8 @@
             >
                 Submit
             </button>
+
+            <a href="{{ $user->profilePath() }}" class="hover:underline">Cancel</a>
         </div>
     </form>
 @endcomponent

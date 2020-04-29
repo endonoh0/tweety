@@ -6,7 +6,7 @@ use App\User;
 
 class ExploresController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         return view('explore', [
             'users' => User::paginate(50)

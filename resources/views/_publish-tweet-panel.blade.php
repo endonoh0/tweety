@@ -6,24 +6,22 @@
             name="body"
             class="w-full"
             placeholder="What's up, dawg?"
+            required
+            autofocus
         ></textarea>
 
         <hr class="my-4">
 
-        <footer class="flex justify-between">
+        <footer class="flex justify-between items-center">
             <img
-                src="images/image-1.png"
+                src="{{ current_user()->avatar }}"
                 alt="your avatar"
                 class="rounded-full mr-2"
                 width="50"
                 height="50"
             >
-            <button
-                type="submit"
-                class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white"
-            >
-                Tweet-a-roo!
-            </button>
+
+            @component ('components.button') @endcomponent
         </footer>
     </form>
 

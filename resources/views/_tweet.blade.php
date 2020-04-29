@@ -3,7 +3,7 @@
         <div class="mr-2 flex-shrink-0">
             <img
                 src="{{ $tweet->user->avatar }}"
-                alt="Avatar of a women"
+                alt="your avatar"
                 class="rounded-full mr-2"
                 width="50"
                 height="50"
