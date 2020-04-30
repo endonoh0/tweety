@@ -14,9 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'username', 'name', 'email', 'password', 'avatar'
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -52,13 +50,19 @@ class User extends Authenticatable
 
         return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
-            ->latest()
+            ->withLikes()
+            ->orderByDesc('id')
             ->paginate(50);
     }
 
     public function tweets()
     {
         return $this->hasMany(Tweet::class)->latest();
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 
     public function profilePath($append = '')
