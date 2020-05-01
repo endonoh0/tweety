@@ -54,6 +54,5 @@
                 {{ $tweet->dislikes ?: 0 }}
             </button>
         </div>
-
     </form>
 </div>

@@ -22,9 +22,11 @@
             {{ $tweet->body }}
         </p>
 
-        @component ('components.like-buttons', [
-            'tweet' => $tweet
-        ])
-        @endcomponent
+        @auth
+            @component ('components.like-buttons', [
+                'tweet' => $tweet
+            ])
+            @endcomponent
+        @endauth
     </div>
 </div>

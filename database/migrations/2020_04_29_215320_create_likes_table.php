@@ -15,13 +15,16 @@ class CreateLikesTable extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('tweet_id');
+            $table
+                ->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade');
+            $table
+                ->foreignId('tweet_id')
+                ->constrained()
+                ->onDelete('cascade');
             $table->boolean('liked');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('tweet_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unique(['user_id', 'tweet_id']);
         });
