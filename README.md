@@ -1,6 +1,6 @@
-# Laravel 6 From Scratch: Final Project 
+# tweety
 ---
-The final project from Laravel From Scratch: https://laracasts.com/series/laravel-6-from-scratch
+Build a twitter clone with Laracasts: https://laracasts.com/series/laravel-6-from-scratch
 ## Installation
 > You must have PHP 7 installed as a prerequisite.
 
